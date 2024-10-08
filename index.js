@@ -14,11 +14,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;  
 const SAML_CERT_PATH = path.join(__dirname, './assets/SelfSignedCert_07Oct2024_225813.crt');  
 
-// Enable CORS for requests from the frontend  
-app.use(cors({  
-  origin: 'http://localhost:3001',  // Replace with your frontend URL  
-  credentials: true  // Allow credentials such as cookies  
-}));  
+app.use(cors());  
 
 app.use(bodyParser.urlencoded({ extended: true }));  
 
@@ -32,7 +28,8 @@ app.use(session({
 app.use(passport.initialize());  
 app.use(passport.session());  
 
-let userProfile=  null;
+let userProfile = null;
+let originUrl = "";
 
 try {  
   const salesforceCert = fs.readFileSync(SAML_CERT_PATH, 'utf-8');  
@@ -58,16 +55,19 @@ try {
 passport.serializeUser((user, done) => done(null, user));  
 passport.deserializeUser((user, done) => done(null, user));  
 
-app.get('/login', passport.authenticate('saml', { failureRedirect: '/login/failure' }));  
+app.get('/login', (req, res, next) => {  
+  originUrl = req.get('referer');
+  next();  
+}, passport.authenticate('saml', { failureRedirect: '/login/failure' }));  
 
 app.post('/login/callback',  
   passport.authenticate('saml', { failureRedirect: '/login/failure' }),  
-  (req, res) => res.redirect('http://localhost:3001/home')  // Redirect to your frontend home page  
+  (req, res) => res.redirect(`${originUrl}/home`)  // Redirect to your frontend home page  
 );  
 
 app.get('/logout', (req, res, next) => {  
   req.logout((err) => {
-		err ? next(err) : res.redirect('http://localhost:3001/')
+		err ? next(err) : res.redirect(`${originUrl}`)
 		userProfile = null
 	});    
 });  
