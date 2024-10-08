@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" entityID="https://efficiency-site-3015.my.salesforce.com" validUntil="2034-10-05T22:58:46.841Z" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+   <md:IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+      <md:KeyDescriptor use="signing">
+         <ds:KeyInfo>
+            <ds:X509Data>
+               <ds:X509Certificate>MIIErDCCA5SgAwIBAgIOAZJpNGPQAAAAABnRwEAwDQYJKoZIhvcNAQELBQAwgZAxKDAmBgNVBAMMH1NlbGZTaWduZWRDZXJ0XzA3T2N0MjAyNF8yMjU4MTMxGDAWBgNVBAsMDzAwREtqMDAwMDAxQ2t0WTEXMBUGA1UECgwOU2FsZXNmb3JjZS5jb20xFjAUBgNVBAcMDVNhbiBGcmFuY2lzY28xCzAJBgNVBAgMAkNBMQwwCgYDVQQGEwNVU0EwHhcNMjQxMDA3MjI1ODE0WhcNMjUxMDA3MTIwMDAwWjCBkDEoMCYGA1UEAwwfU2VsZlNpZ25lZENlcnRfMDdPY3QyMDI0XzIyNTgxMzEYMBYGA1UECwwPMDBES2owMDAwMDFDa3RZMRcwFQYDVQQKDA5TYWxlc2ZvcmNlLmNvbTEWMBQGA1UEBwwNU2FuIEZyYW5jaXNjbzELMAkGA1UECAwCQ0ExDDAKBgNVBAYTA1VTQTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMn62zcrssH3kMNQw6zpUCMLWyxFSlyFT+D3VehpSDEDCUru2WYbzrSUYSSKsNUudGngo65xRHQ07u1LXRcozgJkk643gsNLvM0JyBdWh8lWw4iReKLbB+9xih8LBYj+P2KgvME40Oo6J3Ofr9OBjHjyp8eU3/qF/IU/sKk3XVdnNCFUbuRcVsBRzaq6MSog5v87uwpWzFna3TWALi0buvqdlYZh0v37gbgTrZ/KBdLFsqYKtBXPLmKUjY/1MwlsQq75z4sU99ySlkOc10DT6NhFO2az2JTzqdFurMAg5+dXWVsC1EB07vsoBazM8E3NP7/95El4SvxNF9iiBPVnYdECAwEAAaOCAQAwgf0wHQYDVR0OBBYEFHqNgU/ORzbaXXt3176Ov1Ym2ReCMA8GA1UdEwEB/wQFMAMBAf8wgcoGA1UdIwSBwjCBv4AUeo2BT85HNtpde3fXvo6/VibZF4KhgZakgZMwgZAxKDAmBgNVBAMMH1NlbGZTaWduZWRDZXJ0XzA3T2N0MjAyNF8yMjU4MTMxGDAWBgNVBAsMDzAwREtqMDAwMDAxQ2t0WTEXMBUGA1UECgwOU2FsZXNmb3JjZS5jb20xFjAUBgNVBAcMDVNhbiBGcmFuY2lzY28xCzAJBgNVBAgMAkNBMQwwCgYDVQQGEwNVU0GCDgGSaTRj0AAAAAAZ0cBAMA0GCSqGSIb3DQEBCwUAA4IBAQB2/rcIMTLf5jJoi/LMrdScrc61Z09YqI2BIEuANs86f9rqOkQHQbj/850BXDYv67RYkgE1AB4LZmN+a16g1nNrjykvwjln1C/3XscNkMiWFASu69PKcC53xIDw5qxC38ERZRV9PSoAuqI3gkIavXUB5JXfXL0WMcjGL1AmhpCOS23CUM8N7TFBwn6wJuP9hajghhiFPak3noEVeAxTnVh0t9U2JeS2cbAsgjfI7MkMxu53Qoi45wCRLkkgQpjvTtvkRfpv655ngX9KJinIexfsfQF9c74Bh8/1ZyP8yP6prQUf0ul/hi2K2lwvD04crtAZaBghWoLqKuR2X6gMoe7D</ds:X509Certificate>
+            </ds:X509Data>
+         </ds:KeyInfo>
+      </md:KeyDescriptor>
+      <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://efficiency-site-3015.my.salesforce.com/services/auth/idp/saml2/logout"/>
+      <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://efficiency-site-3015.my.salesforce.com/services/auth/idp/saml2/logout"/>
+      <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</md:NameIDFormat>
+      <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://efficiency-site-3015.my.salesforce.com/idp/endpoint/HttpPost"/>
+      <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://efficiency-site-3015.my.salesforce.com/idp/endpoint/HttpRedirect"/>
+   </md:IDPSSODescriptor>
+</md:EntityDescriptor>
