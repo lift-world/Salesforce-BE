@@ -11,7 +11,8 @@ const cors = require('cors');
 dotenv.config();  
 
 const app = express();  
-const PORT = process.env.PORT || 3000;  
+const PORT = process.env.PORT || 3000;
+const HOST = '0.0.0.0';  
 const SAML_CERT_PATH = path.join(__dirname, './assets/SelfSignedCert_07Oct2024_225813.crt');  
 
 app.use(cors());  
@@ -85,6 +86,6 @@ app.get('/', (req, res) => {
   }  
 });  
 
-app.listen(PORT, () => {  
-  console.log(`Server started on http://localhost:${PORT}`);  
+app.listen(PORT, HOST, () => {  
+  console.log(`Server started on http://localhost:${PORT}, ${HOST}`);  
 });
