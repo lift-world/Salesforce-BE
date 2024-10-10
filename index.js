@@ -61,7 +61,7 @@ app.get('/login', (req, res, next) => {
   next();  
 }, passport.authenticate('saml', { failureRedirect: '/login/failure' }));  
 
-app.post('/login/callback',  
+app.get('/login/callback',  
   passport.authenticate('saml', { failureRedirect: '/login/failure' }),  
   (req, res) => res.redirect(`${originUrl}/home`)  // Redirect to your frontend home page  
 );  
